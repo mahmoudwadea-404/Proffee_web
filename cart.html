@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Proffee</title>
+    <meta name="description"
+        content="Review your selected premium coffee roasts and proceed to checkout. Elevate your daily ritual with Proffee.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proffee.netlify.app/cart.html">
+    <meta property="og:title" content="Your Cart | Proffee Premium Coffee">
+    <meta property="og:description" content="Review your selected premium coffee roasts and proceed to checkout.">
+    <meta property="og:image" content="https://proffee.netlify.app/images/plain_roast.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DRR23G168"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7DRR23G168');
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="ph-fill ph-coffee-bean"></i></span>
+                Proffee
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Shop</a></li>
+                    <li><a href="index.html#featured" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="cart.html" class="cart-btn active" aria-label="View Cart">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="section cart-section" style="padding-top: 120px; min-height: 80vh;">
+        <div class="container">
+            <h1>Your Cart</h1>
+
+            <div class="cart-container">
+                <div id="cart-items">
+                    <!-- Cart items injected here -->
+                    <p class="empty-cart-msg">Loading cart...</p>
+                </div>
+
+                <div id="cart-summary" class="cart-summary" style="display: none;">
+                    <div class="cart-total">
+                        Total: <span id="cart-total-amount" class="text-accent">0.00 EGP</span>
+                    </div>
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="products.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Modal (Deprecated/Removed for full page flow) -->
+    <!-- 
+    <div id="checkout-modal" class="modal">
+        ...
+    </div> 
+    -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="ph-fill ph-coffee-bean"></i></span>
+                    Proffee
+                </a>
+                <p>Elevating your daily ritual.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="products.html">All Coffee</a></li>
+                    <li><a href="products.html">Traditional Mahwaj</a></li>
+                    <li><a href="products.html">Premium Roasts</a></li>
+                </ul>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/_proffee_?igsh=MXJqb3ZpZG90dTJrOA==" target="_blank"
+                    aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                <a href="https://www.facebook.com/share/1D4JwrQvNt/" target="_blank" aria-label="Facebook"><i
+                        class="ph ph-facebook-logo"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Proffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proffee | Premium Coffee Experience</title>
+    <meta name="description"
+        content="Savor the finest artisan coffee at Proffee. Ethically sourced beans, expertly roasted in Egypt. Order your fresh roasts online.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proffee.netlify.app/">
+    <meta property="og:title" content="Proffee | Premium Coffee Experience">
+    <meta property="og:description"
+        content="Savor the finest artisan coffee at Proffee. Ethically sourced beans, expertly roasted in Egypt.">
+    <meta property="og:image" content="https://proffee.netlify.app/images/plain_roast.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://proffee.netlify.app/">
+    <meta property="twitter:title" content="Proffee | Premium Coffee Experience">
+    <meta property="twitter:description"
+        content="Savor the finest artisan coffee at Proffee. Ethically sourced beans, expertly roasted in Egypt.">
+    <meta property="twitter:image" content="https://proffee.netlify.app/images/plain_roast.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DRR23G168"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7DRR23G168');
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="ph-fill ph-coffee-bean"></i></span>
+                Proffee
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Shop</a></li>
+                    <li><a href="index.html#featured" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Experience the <span class="text-accent">Art</span> of Coffee</h1>
+            <p class="hero-subtitle">Premium beans, expert roasting, and a passion for the perfect cup. Welcome to
+                Proffee.</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">Shop Now</a>
+                <a href="#featured" class="btn">Explore Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: var(--spacing-md); font-size: 2.5rem;">Featured Roasts</h2>
+            <div id="featured-grid" class="products-grid">
+                <!-- Injected by JS -->
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-md);">
+                <a href="products.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="ph ph-medal feature-icon"></i>
+                    <h3>Premium Quality</h3>
+                    <p>Sourced from the finest local farms.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="ph ph-fire feature-icon"></i>
+                    <h3>Expertly Roasted</h3>
+                    <p>Roasted in small batches for peak flavor.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="ph ph-package feature-icon"></i>
+                    <h3>Fresh Delivery</h3>
+                    <p>From our roastery straight to your door.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="ph-fill ph-coffee-bean"></i></span>
+                    Proffee
+                </a>
+                <p>Elevating your daily ritual.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="products.html">All Coffee</a></li>
+                    <li><a href="products.html">Traditional Mahwaj</a></li>
+                    <li><a href="products.html">Premium Roasts</a></li>
+                </ul>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/_proffee_?igsh=MXJqb3ZpZG90dTJrOA==" target="_blank"
+                    aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                <a href="https://www.facebook.com/share/1D4JwrQvNt/" target="_blank" aria-label="Facebook"><i
+                        class="ph ph-facebook-logo"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Proffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

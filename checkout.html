@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order | Proffee</title>
+    <meta name="description"
+        content="Complete your order for premium coffee roasts. Ethically sourced and expertly roasted for the perfect cup.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proffee.netlify.app/checkout.html">
+    <meta property="og:title" content="Place Your Order | Proffee">
+    <meta property="og:description"
+        content="Complete your order for premium coffee roasts. Ethically sourced and expertly roasted.">
+    <meta property="og:image" content="https://proffee.netlify.app/images/plain_roast.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DRR23G168"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7DRR23G168');
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="ph-fill ph-coffee-bean"></i></span>
+                Proffee
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Shop</a></li>
+                    <li><a href="index.html#featured" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="cart.html" class="cart-btn" aria-label="View Cart">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="order-container">
+        <div class="order-card">
+            <div class="order-header">
+                <h1>Complete Your Order</h1>
+                <p>Please provide your details to finalize your premium coffee experience.</p>
+            </div>
+
+            <form name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="success.html">
+                <div style="display:none">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </div>
+                <input type="hidden" name="form-name" value="order">
+                <input type="hidden" name="cart-items-data" id="cart-items-data">
+                <input type="hidden" name="order-id" id="order-id">
+                <input type="hidden" name="order-total" id="order-total">
+
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="customer_name" class="form-control" placeholder="John Doe"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="customer_phone" class="form-control"
+                        placeholder="+20 123 456 7890" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" name="customer_address" class="form-control"
+                        placeholder="Your full delivery address..." required></textarea>
+                </div>
+
+                <div class="order-summary" id="form-order-summary"
+                    style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid var(--border-color);">
+                    <h3
+                        style="font-family: var(--font-heading); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Order Summary</h3>
+                    <div id="summary-items" style="margin-bottom: 1rem;">
+                        <!-- Items will be injected here -->
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.2rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                        <span>Total:</span>
+                        <span id="summary-total" class="text-accent">0.00 EGP</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">Place Order</button>
+            </form>
+
+            <div class="back-link">
+                <a href="products.html"><i class="ph ph-arrow-left"></i> Back to Shop</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="ph-fill ph-coffee-bean"></i></span>
+                    Proffee
+                </a>
+                <p>Elevating your daily ritual.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="products.html">All Coffee</a></li>
+                    <li><a href="products.html">Traditional Mahwaj</a></li>
+                    <li><a href="products.html">Premium Roasts</a></li>
+                </ul>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/_proffee_?igsh=MXJqb3ZpZG90dTJrOA==" target="_blank"
+                    aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                <a href="https://www.facebook.com/share/1D4JwrQvNt/" target="_blank" aria-label="Facebook"><i
+                        class="ph ph-facebook-logo"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Proffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const summaryContainer = document.getElementById('summary-items');
+            const totalEl = document.getElementById('summary-total');
+            const cartDataInput = document.getElementById('cart-items-data');
+            const orderIdInput = document.getElementById('order-id');
+            const orderTotalInput = document.getElementById('order-total');
+            const orderForm = document.querySelector('form[name="order"]');
+
+            // 1. Load cart data safely
+            const cart = JSON.parse(localStorage.getItem('proffee-cart')) || [];
+
+            // 2. Handle empty cart redirection
+            if (cart.length === 0) {
+                alert("Your cart is empty. Redirecting to shop...");
+                window.location.href = "products.html";
+                return;
+            }
+
+            // 3. Generate Unique Order ID
+            const orderId = "PRO-" + Date.now();
+            orderIdInput.value = orderId;
+
+            let summaryHtml = '';
+            let subtotal = 0;
+            let emailData = `Order ID: ${orderId}\n\n## Items:\n\n`;
+
+            // 4. Process cart items
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                const weightLabel = { 0.25: '250g', 0.5: '500g', 1.0: '1kg' }[item.weight] || (item.weight * 1000 + 'g');
+
+                // Build Summary UI
+                summaryHtml += `
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                            <span>${item.name} (${weightLabel}) x ${item.quantity}</span>
+                            <span>${itemTotal.toFixed(2)} EGP</span>
+                        </div>
+                    `;
+
+                // Build Professional Email Formatting
+                emailData += `${item.name} (${weightLabel})\nQuantity: ${item.quantity}\nItem total: ${itemTotal.toFixed(2)} EGP\n\n`;
+            });
+
+            // 5. Final Totals
+            const shipping = 60;
+            const finalTotal = subtotal + shipping;
+
+            // Update UI Summary
+            summaryHtml += `
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--color-text-muted);">
+                        <span>Shipping</span>
+                        <span>${shipping.toFixed(2)} EGP</span>
+                    </div>
+                `;
+            summaryContainer.innerHTML = summaryHtml;
+            totalEl.innerText = finalTotal.toFixed(2) + ' EGP';
+
+            // Update Hidden Inputs for Netlify
+            orderTotalInput.value = finalTotal.toFixed(2) + " EGP";
+
+            emailData += `---\n\nSubtotal: ${subtotal.toFixed(2)} EGP\nShipping: ${shipping.toFixed(2)} EGP\nTotal: ${finalTotal.toFixed(2)} EGP`;
+            cartDataInput.value = emailData;
+
+            // 6. Prevent submission if cart is somehow empty at submit time
+            orderForm.addEventListener('submit', (e) => {
+                const currentCart = JSON.parse(localStorage.getItem('proffee-cart')) || [];
+                if (currentCart.length === 0) {
+                    e.preventDefault();
+                    alert("Your cart is empty. Cannot place order.");
+                    window.location.href = "products.html";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
