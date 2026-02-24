@@ -64,7 +64,7 @@
                 <p>Please provide your details to finalize your premium coffee experience.</p>
             </div>
 
-            <form name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="success.html">
+            <form name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
                 <div style="display:none">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                 </div>
@@ -211,14 +211,49 @@
             emailData += `---\n\nSubtotal: ${subtotal.toFixed(2)} EGP\nShipping: ${shipping.toFixed(2)} EGP\nTotal: ${finalTotal.toFixed(2)} EGP`;
             cartDataInput.value = emailData;
 
-            // 6. Prevent submission if cart is somehow empty at submit time
+            // 6. Production-Ready Netlify Form Submission (AJAX)
             orderForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
                 const currentCart = JSON.parse(localStorage.getItem('proffee-cart')) || [];
                 if (currentCart.length === 0) {
-                    e.preventDefault();
                     alert("Your cart is empty. Cannot place order.");
                     window.location.href = "products.html";
+                    return;
                 }
+
+                // UI Feedback: Disable button and show loading state
+                const submitBtn = orderForm.querySelector('.btn-submit');
+                const originalBtnText = submitBtn.innerText;
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Processing...';
+                submitBtn.style.opacity = '0.7';
+
+                const formData = new FormData(orderForm);
+
+                // Submit to Netlify via AJAX to prevent 404 on POST to static file
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString(),
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Success! Clear cart (done in success.html script, but good here too)
+                            localStorage.removeItem('proffee-cart');
+                            window.location.href = "/success.html";
+                        } else {
+                            throw new Error('Server responded with ' + response.status);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Form submission error:', error);
+                        alert("Sorry, there was an issue placing your order. Please try again or contact support.");
+                        // Reset button
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.style.opacity = '1';
+                    });
             });
         });
     </script>

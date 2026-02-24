@@ -1,0 +1,21 @@
+[build]
+  publish = "."
+
+# Netlify Forms configuration
+[forms]
+  submission_notifications_enabled = true
+
+# Optimization for static assets
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
+
+# Pretty URLs
+[build.processing]
+  skip_processing = false
+[build.processing.html]
+  pretty_urls = true
