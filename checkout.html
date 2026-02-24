@@ -231,14 +231,16 @@
 
                 const formData = new FormData(orderForm);
 
-                // Submit to Netlify via AJAX to prevent 404 on POST to static file
-                fetch("/", {
+                // Submit to Netlify via AJAX
+                // Using current location helps Netlify link the submission to the correct form
+                fetch(window.location.href, {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: new URLSearchParams(formData).toString(),
                 })
                     .then(response => {
-                        if (response.ok) {
+                        if (response.ok || response.status === 204) {
+                            // Success! Netlify sometimes returns 204 No Content for AJAX forms
                             // Success! Clear cart (done in success.html script, but good here too)
                             localStorage.removeItem('proffee-cart');
                             window.location.href = "/success.html";
